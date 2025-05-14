@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Analyze food images to get accurate calorie and nutritional information. Our AI-powered tool provides instant results for your dietary needs.">
+    <meta name="keywords" content="food calorie analyzer, nutrition calculator, AI food analysis, diet tracking, calorie counter, meal planning">
+    <meta name="author" content="NutriTech Solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0077FF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Food Calorie Analyzer | Instant Nutrition Analysis</title>
+    <link rel="canonical" href="https://www.foodscans.app">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Food Calorie Analyzer | Instant Nutrition Analysis">
+    <meta property="og:description" content="Get accurate calorie and nutritional information from any food image in seconds with our AI-powered analyzer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.foodscans.app">
+    <meta property="og:image" content="https://www.foodscans.app /images/social-preview.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+    
+    
+    <div class="site-header">
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/foodscanai.png" alt="FoodScan Logo" style="height: 40px;">
+            </div>
+            
+        </div>
+        <div class="header-tagline">Nutrition at a Glance</div>
+    </div>
+</div>
+    
+    <div class="container">
+        <header>
+            
+            <p class="subtitle"></p>
+        </header>
+        
+        <div class="main-content">
+            <div class="card upload-container" id="uploadContainer">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-default-content">
+                        <div class="upload-icon"></div>
+                        <h1>Analyse Food with FoodScans Ai Engine</h1>
+                        <p class="upload-text">Drag & drop any food image and get detailed nutritional information</p>
+                        <div class="upload-buttons">
+                            <button class="btn" id="browseBtn">
+                                <span>Select Image</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="upload-preview" id="uploadPreview">
+                        <div class="close-preview" id="closePreview">✕</div>
+                        <img id="imagePreview" class="image-preview" src="" alt="Food preview">
+                    </div>
+                </div>
+                
+                <input type="file" id="fileInput" accept="image/*">
+                
+                <div class="button-group" id="actionButtons">
+                    <button class="btn analyze-btn" id="analyzeBtn">
+                        <div class="btn-loader" id="btnLoader"></div>
+                        <span>Analyze Food</span>
+                    </button>
+                </div>
+                
+                <div class="loader" id="loader"></div>
+                <p class="error-message" id="errorMessage"></p>
+            </div>
+            
+            <div class="card results-container" id="resultsContainer">
+                <div class="results-header">
+                    <h2 class="result-title">Nutritional Analysis</h2>
+                    <div class="results-actions">
+                        <button class="btn btn-download" id="downloadBtn">
+                            <span><i class="btn-icon">📥</i> Download PDF</span>
+                        </button>
+                        <button class="btn" id="checkAnotherBtn">
+                            <span>Check Another Item</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="resultsList"></div>
+            </div>
+        </div>
+        
+        <!-- Features Section for SEO -->
+        <section class="features-section">
+            <h2 class="features-title">Why Use FoodScans Ai</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Instant Analysis</h3>
+                    <p class="feature-desc">Get detailed nutritional information from any food image in seconds with our advanced AI technology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Comprehensive Results</h3>
+                    <p class="feature-desc">View calories, macronutrients, serving sizes, and health insights all in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3 class="feature-title">Diet Tracking</h3>
+                    <p class="feature-desc">Perfect for tracking your meals, planning your diet, or checking nutritional values on the go.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2 class="how-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Upload Photo</h3>
+                    <p class="step-desc">Take a photo of your meal or upload an existing image from your device.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">AI Analysis</h3>
+                    <p class="step-desc">Our AI analyzes the image to identify food items and their nutritional content.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get Results</h3>
+                    <p class="step-desc">View detailed nutritional information including calories, macronutrients, and health insights.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question">How accurate is the FoodScans Ai Engine?</h3>
+                    <p class="faq-answer">Our AI Engine provides estimates with approximately 85-90% accuracy for most common foods. Results may vary based on image quality and food complexity.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I analyze multiple food items in one image?</h3>
+                    <p class="faq-answer">Yes! Our analyzer can identify and provide nutritional information for multiple food items in a single image, such as a full meal on a plate.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What types of nutritional information does it provide?</h3>
+                    <p class="faq-answer">Our analyzer provides calories, macronutrients (protein, carbs, fat), estimated serving size, and additional health insights about the foods identified.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Is this service free to use?</h3>
+                    <p class="faq-answer">Currently free to use with unlimited analyses. In the future, access will be token-gated, and a limited number of free analyses per day will apply.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 FoodScan Ai</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
